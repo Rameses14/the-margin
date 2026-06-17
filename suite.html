@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — The Margin Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brandbox">
+      <div class="logo">The Margin</div>
+      <div class="tag">Editor’s Suite</div>
+    </div>
+    <nav>
+      <a class="active" href="suite.html"><span class="g">▭</span> Dashboard</a>
+      <a href="suite-planning.html"><span class="g">▦</span> Planning</a>
+      <a href="suite-drafts.html"><span class="g">✎</span> Drafts</a>
+      <a href="suite-issues.html"><span class="g">❖</span> Issues</a>
+      <a href="suite-topics.html"><span class="g">✦</span> Topics</a>
+      <a href="suite-writers.html"><span class="g">☻</span> Writers</a>
+      <a href="suite-settings.html"><span class="g">⚙</span> Settings</a>
+    </nav>
+    <div class="who">
+      <b>Kabir Menon</b>
+      Editor-in-Chief
+      <a href="login.html">Sign out →</a>
+    </div>
+  </aside>
+
+  <main class="ed-main">
+    <div class="ed-top">
+      <div>
+        <h1>Good evening, Kabir</h1>
+        <div class="sub">Issue No. 2 — “Noise” · publishes in 9 days</div>
+      </div>
+      <div class="ed-actions">
+        <button class="btn" onclick="openPreview('preview-issue.html?no=2','issue-2-noise')">Preview issue</button>
+        <a class="btn solid" href="editor-write.html">＋ New piece</a>
+      </div>
+    </div>
+
+    <div class="ed-body">
+
+      <div class="stat-row">
+        <div class="stat"><div class="n">4</div><div class="l">In this issue</div></div>
+        <div class="stat"><div class="n">7</div><div class="l">Open drafts</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">Awaiting review</div></div>
+        <div class="stat"><div class="n">12</div><div class="l">Published total</div></div>
+      </div>
+
+      <div class="block-title"><h2>Your drafts &amp; submissions</h2><span class="line"></span><a href="suite.html">View all →</a></div>
+      <table class="draft-table">
+        <thead>
+          <tr><th>Piece</th><th>Author</th><th>Words</th><th>Status</th><th>Updated</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="t">The Volume Knob of Adolescence</div><span class="kk">Pop Culture</span></td>
+            <td>Ananya Reddy</td><td class="muted">980</td>
+            <td><span class="pill review">In review</span></td>
+            <td class="muted">2h ago</td>
+            <td><a class="btn" href="editor-write.html">Open</a></td>
+          </tr>
+          <tr>
+            <td><div class="t">What Silence Costs a City</div><span class="kk">Science</span></td>
+            <td>Sara Iqbal</td><td class="muted">1,240</td>
+            <td><span class="pill draft">Draft</span></td>
+            <td class="muted">Yesterday</td>
+            <td><a class="btn" href="editor-write.html">Open</a></td>
+          </tr>
+          <tr>
+            <td><div class="t">The Last Bench, Revisited</div><span class="kk">Sports</span></td>
+            <td>Arjun Nair</td><td class="muted">760</td>
+            <td><span class="pill scheduled">Scheduled</span></td>
+            <td class="muted">2 days ago</td>
+            <td><a class="btn" href="editor-write.html">Open</a></td>
+          </tr>
+          <tr>
+            <td><div class="t">A Field Guide to School Corridor Acoustics</div><span class="kk">Humour</span></td>
+            <td>Meher Joshi</td><td class="muted">540</td>
+            <td><span class="pill draft">Draft</span></td>
+            <td class="muted">3 days ago</td>
+            <td><a class="btn" href="editor-write.html">Open</a></td>
+          </tr>
+          <tr>
+            <td><div class="t">Why We Can’t Stop Re-Watching</div><span class="kk">Pop Culture</span></td>
+            <td>Ananya Reddy</td><td class="muted">1,020</td>
+            <td><span class="pill published">Published</span></td>
+            <td class="muted">Issue No. 1</td>
+            <td><a class="btn" href="article-rewatch.html">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="block-title"><h2>Curate Issue No. 2 — “Noise”</h2><span class="line"></span><a href="suite.html">Reorder &amp; schedule →</a></div>
+      <div class="kanban">
+        <div class="col-k">
+          <h3><span>Ideas</span><span>2</span></h3>
+          <div class="kcard"><div class="kk">Arts · Film</div><div class="t">The Case Against the Quiet Movie</div><div class="meta">Nikhil Rao · pitch</div></div>
+          <div class="kcard"><div class="kk">Food</div><div class="t">Loud Food: A Defence of the Crunch</div><div class="meta">Unassigned</div></div>
+          <div class="kcard ghost">＋ Add idea</div>
+        </div>
+        <div class="col-k">
+          <h3><span>In progress</span><span>3</span></h3>
+          <div class="kcard"><div class="kk">Pop Culture</div><div class="t">The Volume Knob of Adolescence</div><div class="meta">Ananya R. · in review</div></div>
+          <div class="kcard"><div class="kk">Science</div><div class="t">What Silence Costs a City</div><div class="meta">Sara I. · draft</div></div>
+          <div class="kcard"><div class="kk">Humour</div><div class="t">Corridor Acoustics</div><div class="meta">Meher J. · draft</div></div>
+        </div>
+        <div class="col-k">
+          <h3><span>Ready</span><span>1</span></h3>
+          <div class="kcard"><div class="kk">Sports</div><div class="t">The Last Bench, Revisited</div><div class="meta">Arjun N. · scheduled</div></div>
+          <div class="kcard ghost">Drag a ready piece here</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="preview.js"></script>
+</body>
+</html>

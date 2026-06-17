@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — The Margin Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="login-screen">
+  <form class="login-card" onsubmit="return doLogin(event)">
+    <div class="eyebrow">Editor’s Suite</div>
+    <div class="logo">The Margin</div>
+    <div class="sub">Sign in to write, curate, and publish.</div>
+
+    <div class="field">
+      <label for="email">School email</label>
+      <input id="email" type="email" placeholder="you@school.edu" autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="pw">Password</label>
+      <input id="pw" type="password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <div class="login-error" id="err"></div>
+    <button class="btn-primary" type="submit">Sign in</button>
+
+    <div class="login-hint">
+      <b>Demo login</b><br>
+      Email: <b>editor@themargin.test</b><br>
+      Password: <b>demo1234</b>
+    </div>
+    <a class="login-back" href="index.html">← Back to the magazine</a>
+  </form>
+</div>
+
+<script>
+  function doLogin(e){
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim().toLowerCase();
+    var pw = document.getElementById('pw').value;
+    var err = document.getElementById('err');
+    if (email === 'editor@themargin.test' && pw === 'demo1234') {
+      err.textContent = '';
+      window.location.href = 'suite.html';
+    } else {
+      err.textContent = 'Incorrect email or password. Use the demo login below.';
+    }
+    return false;
+  }
+</script>
+</body>
+</html>

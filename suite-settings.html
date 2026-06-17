@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — The Margin Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brandbox"><div class="logo">The Margin</div><div class="tag">Editor’s Suite</div></div>
+    <nav>
+      <a href="suite.html"><span class="g">▭</span> Dashboard</a>
+      <a href="suite-planning.html"><span class="g">▦</span> Planning</a>
+      <a href="suite-drafts.html"><span class="g">✎</span> Drafts</a>
+      <a href="suite-issues.html"><span class="g">❖</span> Issues</a>
+      <a href="suite-topics.html"><span class="g">✦</span> Topics</a>
+      <a href="suite-writers.html"><span class="g">☻</span> Writers</a>
+      <a class="active" href="suite-settings.html"><span class="g">⚙</span> Settings</a>
+    </nav>
+    <div class="who"><b>Kabir Menon</b>Editor-in-Chief<a href="login.html">Sign out →</a></div>
+  </aside>
+
+  <main class="ed-main">
+    <div class="ed-top">
+      <div><h1>Settings</h1><div class="sub">Publication, branding, access, and notifications.</div></div>
+      <div class="ed-actions"><button class="btn solid" onclick="alert('Settings saved (demo).')">Save changes</button></div>
+    </div>
+
+    <div class="ed-body">
+      <div class="settings">
+
+        <div class="set-group">
+          <div class="gh">Publication</div>
+          <div class="set-row"><div class="label"><b>Magazine name</b><span>Shown in the masthead across the site.</span></div><div class="control"><input type="text" value="The Margin"></div></div>
+          <div class="set-row"><div class="label"><b>Tagline</b><span>The line under the logo.</span></div><div class="control"><input type="text" value="A Magazine Written by Students"></div></div>
+          <div class="set-row"><div class="label"><b>Publishing cadence</b><span>How often a new issue goes out.</span></div><div class="control"><select><option selected>Every second week</option><option>Weekly</option><option>Monthly</option></select></div></div>
+          <div class="set-row"><div class="label"><b>Publish day</b><span>Default day an issue goes live.</span></div><div class="control"><select><option>Monday</option><option>Friday</option><option selected>Wednesday</option><option>Sunday</option></select></div></div>
+        </div>
+
+        <div class="set-group">
+          <div class="gh">Branding</div>
+          <div class="set-row"><div class="label"><b>School logo &amp; name</b><span>Off for now — using a neutral placeholder until branding is approved.</span></div><div class="control"><label class="toggle"><input type="checkbox"><span class="track"></span></label></div></div>
+          <div class="set-row"><div class="label"><b>Primary accent</b><span>Used for rules, links, and highlights.</span></div><div class="control"><span class="swatch" style="background:#16243F"></span><span class="swatch" style="background:#b08d3c"></span><span class="muted">Navy &amp; Gold</span></div></div>
+          <div class="set-row"><div class="label"><b>Masthead typeface</b></div><div class="control"><select><option selected>Playfair Display</option><option>Spectral</option><option>Custom…</option></select></div></div>
+        </div>
+
+        <div class="set-group">
+          <div class="gh">Access &amp; security</div>
+          <div class="set-row"><div class="label"><b>Sign-in method</b><span>How editors log in to the suite.</span></div><div class="control"><select><option selected>Google sign-in (school accounts)</option><option>Magic email link</option></select></div></div>
+          <div class="set-row"><div class="label"><b>Restrict to school domain</b><span>Only @school.edu addresses may sign in.</span></div><div class="control"><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></div></div>
+          <div class="set-row"><div class="label"><b>Require invite to join</b><span>New accounts must be invited by an Admin (the allowlist).</span></div><div class="control"><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></div></div>
+          <div class="set-row"><div class="label"><b>Editor-in-Chief approval before publish</b><span>No issue goes live without a final sign-off.</span></div><div class="control"><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></div></div>
+        </div>
+
+        <div class="set-group">
+          <div class="gh">Reading &amp; notifications</div>
+          <div class="set-row"><div class="label"><b>Public site requires login</b><span>Keep this off — students &amp; parents read freely.</span></div><div class="control"><label class="toggle"><input type="checkbox"><span class="track"></span></label></div></div>
+          <div class="set-row"><div class="label"><b>Let readers save articles</b><span>Adds the “Saved” bookmark in the nav.</span></div><div class="control"><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></div></div>
+          <div class="set-row"><div class="label"><b>Email the team when an issue publishes</b></div><div class="control"><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></div></div>
+        </div>
+
+        <div class="set-group">
+          <div class="gh">Danger zone</div>
+          <div class="set-row danger"><div class="label"><b>Unpublish current issue</b><span>Takes Issue No. 1 offline immediately.</span></div><div class="control"><button class="btn danger" onclick="alert('This would unpublish the live issue (demo).')">Unpublish</button></div></div>
+          <div class="set-row danger"><div class="label"><b>Transfer ownership</b><span>Hand the Admin role to another member.</span></div><div class="control"><button class="btn danger" onclick="alert('Transfer ownership (demo).')">Transfer…</button></div></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

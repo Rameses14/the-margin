@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue preview — The Margin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="reader">
+<div class="pv-notice" id="notice">Issue preview — not yet live.</div>
+
+<header class="utility">
+  <div class="wrap">
+      <input type="checkbox" id="navtog" class="navtog-input" aria-hidden="true">
+    <nav>
+      <a href="issues.html">Issues</a>
+      <a href="topics.html">Topics</a>
+      <a href="writers.html">Writers</a>
+      <a href="saved.html">Saved</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a href="login.html" class="signin">Sign in</a>
+      <label for="navtog" class="navtoggle" aria-label="Open menu">☰</label>
+  </div>
+</header>
+
+<div class="masthead">
+  <div class="eyebrow">A Magazine Written by Students</div>
+  <div class="logo">The Margin</div>
+  <svg class="handrule" viewBox="0 0 460 15" preserveAspectRatio="none" aria-hidden="true"><path d="M3,9 C60,4 110,12 165,7 C220,2 270,11 322,7 C372,3 410,10 457,6"/></svg>
+  <div class="issueline" style="margin-top:10px;">
+    <span id="issueline">Issue No. 2 — “Noise”</span>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="section-head"><h2>In This Issue</h2><span class="line"></span></div>
+  <section class="story-grid" id="grid"></section>
+</main>
+
+<script>
+  var ISSUES = {
+    '1': { name: 'Beginnings', theme: 'June 2026', live: true, pieces: [
+      { kicker:'Pop Culture', title:'Why We Can’t Stop Re-Watching', dek:'The quiet case for the comfort re-run.', author:'Ananya Reddy' },
+      { kicker:'Business', title:'The Canteen Economy', dek:'What a four-rupee samosa teaches about supply and demand.', author:'Kabir Menon' },
+      { kicker:'Science', title:'In Defence of the Pigeon', dek:'The bird we ignore may be smarter than we are.', author:'Sara Iqbal' },
+      { kicker:'Travel', title:'A Train, a Thermos, and the Long Way Home', dek:'In praise of journeys that refuse to be efficient.', author:'Dev Anand' },
+      { kicker:'Verse & Story', title:'Beginnings, in Three Poems', dek:'On leaving, arriving, and the rooms in between.', author:'The Senior Verse Circle' },
+      { kicker:'Food', title:'The Tyranny of the Tiffin', dek:'A short history of lunch under pressure.', author:'Meher Joshi' },
+      { kicker:'Sports', title:'The Bench Knows Things the Scoreboard Doesn’t', dek:'The most interesting place on the team isn’t the field.', author:'Arjun Nair' }
+    ]},
+    '2': { name: 'Noise', theme: 'Publishes 25 June 2026', live: false, pieces: [
+      { kicker:'Pop Culture', title:'The Volume Knob of Adolescence', dek:'On mistaking loudness for substance.', author:'Ananya Reddy', status:'In review' },
+      { kicker:'Science', title:'What Silence Costs a City', dek:'The hidden price of a world that never quiets down.', author:'Sara Iqbal', status:'Draft' },
+      { kicker:'Sports', title:'The Last Bench, Revisited', dek:'What the substitutes hear that the starters don’t.', author:'Arjun Nair', status:'Scheduled' },
+      { kicker:'Humour', title:'A Field Guide to Corridor Acoustics', dek:'Identifying each species of school-hallway din.', author:'Meher Joshi', status:'Draft' },
+      { kicker:'Arts · Film', title:'The Case Against the Quiet Movie', dek:'Why some stories need to be loud.', author:'Nikhil Rao', status:'In review' }
+    ]},
+    '3': { name: 'Home', theme: 'Target 9 July 2026', live: false, pieces: [
+      { kicker:'Pop Culture', title:'(pitch) The Songs That Mean “Home”', dek:'A playlist as an address.', author:'Unassigned', status:'Idea' },
+      { kicker:'Food', title:'(pitch) The Meal You Ask For When You’re Sick', dek:'Comfort, plated.', author:'Unassigned', status:'Idea' }
+    ]}
+  };
+
+  var no = new URLSearchParams(location.search).get('no') || '2';
+  var iss = ISSUES[no] || ISSUES['2'];
+
+  document.getElementById('issueline').textContent = 'Issue No. ' + no + ' — “' + iss.name + '”';
+  var notice = document.getElementById('notice');
+  if (iss.live) {
+    notice.innerHTML = 'Issue preview — this issue is <b>live on the site.</b>';
+  } else {
+    notice.innerHTML = 'Issue preview — how Issue No. ' + no + ' will look once published. <b>' + iss.theme + '.</b>';
+  }
+
+  var grid = document.getElementById('grid');
+  iss.pieces.forEach(function (p) {
+    var statusTag = p.status ? '<p class="byline" style="color:var(--kicker);">' + p.status + '</p>' : '';
+    grid.insertAdjacentHTML('beforeend',
+      '<div class="story">' +
+        '<div class="art">illustration</div>' +
+        '<span class="kicker">' + p.kicker + '</span>' +
+        '<h3>' + p.title + '</h3>' +
+        '<p class="dek">' + p.dek + '</p>' +
+        '<p class="byline">' + p.author + '</p>' + statusTag +
+      '</div>');
+  });
+  document.title = 'Issue No. ' + no + ' — ' + iss.name + ' · preview';
+</script>
+</body>
+</html>

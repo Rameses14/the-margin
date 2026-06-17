@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning — The Margin Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brandbox"><div class="logo">The Margin</div><div class="tag">Editor’s Suite</div></div>
+    <nav>
+      <a href="suite.html"><span class="g">▭</span> Dashboard</a>
+      <a class="active" href="suite-planning.html"><span class="g">▦</span> Planning</a>
+      <a href="suite-drafts.html"><span class="g">✎</span> Drafts</a>
+      <a href="suite-issues.html"><span class="g">❖</span> Issues</a>
+      <a href="suite-topics.html"><span class="g">✦</span> Topics</a>
+      <a href="suite-writers.html"><span class="g">☻</span> Writers</a>
+      <a href="suite-settings.html"><span class="g">⚙</span> Settings</a>
+    </nav>
+    <div class="who"><b>Kabir Menon</b>Editor-in-Chief<a href="login.html">Sign out →</a></div>
+  </aside>
+
+  <main class="ed-main">
+    <div class="ed-top">
+      <div><h1>Planning</h1><div class="sub">Map out each issue and brief every piece before a word is written.</div></div>
+      <div class="ed-actions">
+        <select class="insp-select" style="min-width:200px;" onchange="">
+          <option>Issue No. 2 — “Noise”</option>
+          <option>Issue No. 3 — “Home”</option>
+        </select>
+        <a class="btn solid" href="suite-planning.html">＋ New issue plan</a>
+      </div>
+    </div>
+
+    <div class="ed-body">
+
+      <div class="plan-issue">
+        <div class="ph">
+          <div>
+            <h2>Issue No. 2 — “Noise”</h2>
+            <div class="theme">Theme: the sound the world makes, and what we miss when we stop listening.</div>
+          </div>
+          <span class="pill progress">In planning · 4 of 5 briefed</span>
+        </div>
+        <div class="throughline">
+          <b>The throughline.</b> Every piece this issue turns on a different kind of noise — social, civic, comic, competitive, cinematic. The issue should build from the personal (a teenager’s feed) outward to the public (a city that never quiets), then let the lighter pieces breathe. We want a mix of one strong argument per writer, not balanced both-sides reporting — this is an opinion magazine.
+        </div>
+        <div class="plan-meta">
+          <span>Target publish · <b>25 June 2026</b></span>
+          <span>Drafts due · <b>18 June</b></span>
+          <span>Pieces · <b>5</b></span>
+          <span>Editor · <b>Kabir Menon</b></span>
+        </div>
+      </div>
+
+      <div class="block-title"><h2>Pieces in this issue</h2><span class="line"></span><a href="suite-planning.html">Reorder →</a></div>
+
+      <div class="plan-card">
+        <div class="top">
+          <div>
+            <span class="kicker" style="color:var(--kicker);">Pop Culture</span>
+            <h3>The Volume Knob of Adolescence</h3>
+            <div class="who">Ananya Reddy · Grade 11 · <span class="pill review" style="margin-left:4px;">In review</span></div>
+          </div>
+          <a class="btn" href="editor-write.html">Edit brief</a>
+        </div>
+        <div class="brief">
+          <span class="lab">The plan — subject · angle · what’s discussed</span>
+          A first-person essay on growing up in a culture that first tells you to be quiet, then demands you have loud opinions online. <b>Ananya’s argument:</b> we’ve started mistaking volume for substance — a take is not a thought, a repost is not a belief — and the most interesting register is the one just above silence, where you can actually think. Discusses social-media performativity, the pressure to “have a position,” and a modest defence of turning the noise down rather than off.
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="top">
+          <div>
+            <span class="kicker" style="color:var(--kicker);">Science</span>
+            <h3>What Silence Costs a City</h3>
+            <div class="who">Sara Iqbal · Grade 10 · <span class="pill draft" style="margin-left:4px;">Draft</span></div>
+          </div>
+          <a class="btn" href="editor-write.html">Edit brief</a>
+        </div>
+        <div class="brief">
+          <span class="lab">The plan — subject · angle · what’s discussed</span>
+          A reported science essay on noise pollution and the measurable toll of a city that never goes quiet. <b>Sara’s argument:</b> silence is an undervalued public good we’re losing without noticing, and we should treat it as infrastructure, not luxury. Discusses the research on noise and sleep, stress and concentration, why hospitals and schools suffer most, and what quieter urban design would actually look like.
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="top">
+          <div>
+            <span class="kicker" style="color:var(--kicker);">Sports</span>
+            <h3>The Last Bench, Revisited</h3>
+            <div class="who">Arjun Nair · Grade 11 · <span class="pill scheduled" style="margin-left:4px;">Scheduled</span></div>
+          </div>
+          <a class="btn" href="editor-write.html">Edit brief</a>
+        </div>
+        <div class="brief">
+          <span class="lab">The plan — subject · angle · what’s discussed</span>
+          A piece on the substitutes’ bench as the real social and emotional core of a school team — the noise of the sideline. <b>Arjun’s argument:</b> belonging, effort and quiet loyalty matter more than minutes played, and a team is best judged by how it treats the kid who rarely gets on. Discusses bench culture, the dignity of showing up, and why we over-celebrate the scoreboard.
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="top">
+          <div>
+            <span class="kicker" style="color:var(--kicker);">Humour</span>
+            <h3>A Field Guide to Corridor Acoustics</h3>
+            <div class="who">Meher Joshi · Grade 9 · <span class="pill draft" style="margin-left:4px;">Draft</span></div>
+          </div>
+          <a class="btn" href="editor-write.html">Edit brief</a>
+        </div>
+        <div class="brief">
+          <span class="lab">The plan — subject · angle · what’s discussed</span>
+          A comic mock-taxonomy of the noises of a school corridor between periods. <b>Meher’s angle:</b> affectionate, observational humour — the hallway as a soundscape with its own identifiable species (the slammed-locker, the migrating friend-group, the lone whistler). Discusses, with a straight face, the “ecology” of school din. Keeps it light; this is the issue’s palate-cleanser.
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <div class="top">
+          <div>
+            <span class="kicker" style="color:var(--kicker);">Arts · Film</span>
+            <h3>The Case Against the Quiet Movie</h3>
+            <div class="who">Nikhil Rao · Grade 10 · <span class="pill idea" style="margin-left:4px;">Pitch</span></div>
+          </div>
+          <a class="btn" href="editor-write.html">Edit brief</a>
+        </div>
+        <div class="brief">
+          <span class="lab">The plan — subject · angle · what’s discussed</span>
+          A contrarian film essay defending loud, maximalist cinema against the prestige of the hushed, “tasteful” quiet film. <b>Nikhil’s argument:</b> some stories earn their volume, and our reflex to equate restraint with quality is its own kind of snobbery. Discusses sound design as storytelling, spectacle versus minimalism, and a few films that are great precisely because they refuse to whisper.
+        </div>
+      </div>
+
+      <div class="plan-card add" onclick="alert('Add a new piece to the plan (demo).')">
+        ＋ Brief a new piece for this issue
+      </div>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>

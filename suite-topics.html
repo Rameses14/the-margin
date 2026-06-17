@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topics — The Margin Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brandbox"><div class="logo">The Margin</div><div class="tag">Editor’s Suite</div></div>
+    <nav>
+      <a href="suite.html"><span class="g">▭</span> Dashboard</a>
+      <a href="suite-planning.html"><span class="g">▦</span> Planning</a>
+      <a href="suite-drafts.html"><span class="g">✎</span> Drafts</a>
+      <a href="suite-issues.html"><span class="g">❖</span> Issues</a>
+      <a class="active" href="suite-topics.html"><span class="g">✦</span> Topics</a>
+      <a href="suite-writers.html"><span class="g">☻</span> Writers</a>
+      <a href="suite-settings.html"><span class="g">⚙</span> Settings</a>
+    </nav>
+    <div class="who"><b>Kabir Menon</b>Editor-in-Chief<a href="login.html">Sign out →</a></div>
+  </aside>
+
+  <main class="ed-main">
+    <div class="ed-top">
+      <div><h1>Topics &amp; sections</h1><div class="sub">The subjects readers can browse by. Toggle visibility, set the accent, reorder.</div></div>
+      <div class="ed-actions"><a class="btn solid" href="suite-topics.html">＋ New topic</a></div>
+    </div>
+
+    <div class="ed-body">
+      <table class="draft-table">
+        <thead>
+          <tr><th>Topic</th><th>Accent</th><th>Pieces</th><th>Section editor</th><th>Visible</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="t">⠿ Pop Culture</div><span class="kk">/topics/pop-culture</span></td><td><span class="swatch" style="background:#7a3b2e"></span>Brick</td><td class="muted">4</td><td>Ananya Reddy</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Business</div><span class="kk">/topics/business</span></td><td><span class="swatch" style="background:#16243F"></span>Navy</td><td class="muted">3</td><td>Kabir Menon</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Science</div><span class="kk">/topics/science</span></td><td><span class="swatch" style="background:#2f6f5b"></span>Pine</td><td class="muted">2</td><td>Sara Iqbal</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Arts</div><span class="kk">/topics/arts · film · tv · music · books · stage</span></td><td><span class="swatch" style="background:#5a3f86"></span>Plum</td><td class="muted">7</td><td>Nikhil Rao</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Food</div><span class="kk">/topics/food</span></td><td><span class="swatch" style="background:#b08d3c"></span>Gold</td><td class="muted">3</td><td>Meher Joshi</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Travel</div><span class="kk">/topics/travel</span></td><td><span class="swatch" style="background:#3d6b8a"></span>Slate</td><td class="muted">2</td><td>Dev Anand</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Sports</div><span class="kk">/topics/sports</span></td><td><span class="swatch" style="background:#8a5a2c"></span>Umber</td><td class="muted">2</td><td>Arjun Nair</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Verse &amp; Story</div><span class="kk">/topics/verse</span></td><td><span class="swatch" style="background:#6b5d33"></span>Olive</td><td class="muted">4</td><td>Aisha Khan</td><td><label class="toggle"><input type="checkbox" checked><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+          <tr><td><div class="t">⠿ Humour</div><span class="kk">/topics/humour</span></td><td><span class="swatch" style="background:#9c8f6e"></span>Sand</td><td class="muted">1</td><td class="muted">Unassigned</td><td><label class="toggle"><input type="checkbox"><span class="track"></span></label></td><td><a class="btn" href="suite-topics.html">Edit</a></td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="font-size:13px;">⠿ Drag to set the order topics appear in the reader’s navigation. Hidden topics stay accessible by direct link but don’t show in the menu.</p>
+    </div>
+  </main>
+</div>
+</body>
+</html>

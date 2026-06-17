@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft preview — The Margin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="reader">
+<div class="pv-notice">Draft preview — this is how the piece will appear once published. <b>Not yet live.</b></div>
+
+<header class="utility">
+  <div class="wrap">
+      <input type="checkbox" id="navtog" class="navtog-input" aria-hidden="true">
+    <nav>
+      <a href="issues.html">Issues</a>
+      <a href="topics.html">Topics</a>
+      <a href="writers.html">Writers</a>
+      <a href="saved.html">Saved</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a href="login.html" class="signin">Sign in</a>
+      <label for="navtog" class="navtoggle" aria-label="Open menu">☰</label>
+  </div>
+</header>
+<div class="masthead compact">
+  <div class="eyebrow">A Magazine Written by Students</div>
+  <a href="index.html"><div class="logo">The Margin</div></a>
+  <svg class="handrule" viewBox="0 0 460 15" preserveAspectRatio="none" aria-hidden="true"><path d="M3,9 C60,4 110,12 165,7 C220,2 270,11 322,7 C372,3 410,10 457,6"/></svg>
+</div>
+
+<main class="wrap">
+  <a class="back" href="index.html">← Issue No. 2 — “Noise”</a>
+  <article class="article">
+    <span class="kicker" id="kicker">Topic</span>
+    <h1 id="title">Untitled draft</h1>
+    <p class="dek" id="dek"></p>
+    <div class="meta">
+      <div class="avatar" id="avatar">·</div>
+      <div class="who"><b id="author">Author</b><br><span style="color:var(--muted);" id="sub">Draft · June 2026</span></div>
+    </div>
+    <div class="hero">illustration</div>
+    <div id="body">
+      <p class="lede" id="lede">This piece is still being written. When it’s published, the full text will appear here, set in the magazine’s reading layout — drop cap, pull quotes, and all.</p>
+      <p>For now, this preview shows the headline, standfirst, byline, and topic exactly as readers will see them on the live site. Editors use it to check how a piece reads before it goes into an issue.</p>
+      <blockquote>The preview reads from the draft’s own details — change the title or topic in the editor and it updates here.</blockquote>
+      <p>Switch between Desktop and Mobile in the preview bar above to see how the layout reflows on a phone, which is how most students and parents will read it.</p>
+    </div>
+    <p class="endmark">◆ ◆ ◆</p>
+  </article>
+</main>
+
+<script>
+  function q(name, dflt){ var v = new URLSearchParams(location.search).get(name); return (v===null||v==='') ? (dflt||'') : v; }
+  function set(id, val){ if(val) document.getElementById(id).textContent = val; }
+  var title = q('title','Untitled draft');
+  var author = q('author','');
+  set('kicker', q('kicker'));
+  set('title', title);
+  set('dek', q('dek'));
+  set('author', author);
+  if (q('lead')) document.getElementById('lede').textContent = q('lead');
+  // initials for the avatar
+  if (author) {
+    var parts = author.trim().split(/\s+/);
+    document.getElementById('avatar').textContent =
+      (parts[0]||' ')[0] + (parts.length>1 ? parts[parts.length-1][0] : '');
+  }
+  document.title = title + ' — Draft preview';
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editing — The Margin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="write-shell">
+
+  <div class="write-main">
+    <div class="write-bar">
+      <div class="left">
+        <a class="exit" href="suite.html">← Back to suite</a>
+        <span class="save-ind"><span class="dot"></span><span id="saveText">All changes saved</span></span>
+      </div>
+      <div class="ed-actions">
+        <button class="btn" onclick="fakeSave()">Save draft</button>
+        <button class="btn" onclick="alert('Sent to Editor-in-Chief for review (demo).')">Send for review</button>
+        <button class="btn gold" onclick="alert('Scheduled for Issue No. 2 — “Noise” (demo).')">Publish…</button>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <select onchange="document.execCommand('formatBlock', false, this.value)">
+        <option value="p">Paragraph</option>
+        <option value="h2">Heading</option>
+        <option value="blockquote">Pull quote</option>
+      </select>
+      <span class="sep"></span>
+      <button onclick="cmd('bold')" title="Bold"><b>B</b></button>
+      <button onclick="cmd('italic')" title="Italic"><i>I</i></button>
+      <button onclick="cmd('underline')" title="Underline"><u>U</u></button>
+      <span class="sep"></span>
+      <button onclick="cmd('insertUnorderedList')" title="Bullets">•</button>
+      <button onclick="cmd('insertOrderedList')" title="Numbered">1.</button>
+      <span class="sep"></span>
+      <button onclick="cmd('justifyLeft')">↤</button>
+      <button onclick="cmd('justifyCenter')">↔</button>
+    </div>
+
+    <div class="canvas">
+      <div class="sheet">
+        <span class="kk">Pop Culture</span>
+        <input class="title-input" value="The Volume Knob of Adolescence" oninput="touch()">
+        <div class="doc" contenteditable="true" oninput="touch(); count()" id="doc">
+          <p class="lede">Somewhere between thirteen and seventeen, the world stops asking you to be quiet and starts asking you to have an opinion — loudly, and preferably online. This is the volume knob of adolescence, and nobody hands you the manual.</p>
+          <p>What interests me is not the noise itself but the way we’ve started mistaking it for substance. A take is not a thought. A repost is not a belief. And yet the louder the channel, the more certain we are that someone, somewhere, is finally listening.</p>
+          <blockquote>We were promised a megaphone. What we got was a room where everyone is shouting and no one can hear.</blockquote>
+          <p>I want to make the unfashionable case for turning it down. Not off — down. There is a register, just above silence, where you can actually think. (Continue writing…)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="inspector">
+    <h4>Status</h4>
+    <select class="insp-select">
+      <option>Draft</option>
+      <option selected>In review</option>
+      <option>Scheduled</option>
+      <option>Published</option>
+    </select>
+
+    <h4>Details</h4>
+    <div class="insp-row"><span>Topic</span><b>Pop Culture</b></div>
+    <div class="insp-row"><span>Author</span><b>Ananya Reddy</b></div>
+    <div class="insp-row"><span>Issue</span><b>No. 2 — “Noise”</b></div>
+    <div class="insp-row"><span>Words</span><b id="wc">—</b></div>
+    <div class="insp-row"><span>Read time</span><b id="rt">—</b></div>
+
+    <h4>Version history</h4>
+    <div class="ver"><b>Autosaved · just now</b>+38 words, blockquote added</div>
+    <div class="ver"><b>Today, 4:02 PM</b>Ananya Reddy</div>
+    <div class="ver"><b>Today, 1:15 PM</b>Kabir Menon · review notes</div>
+    <div class="ver"><b>Yesterday, 9:40 PM</b>First draft</div>
+  </aside>
+</div>
+
+<script>
+  function cmd(c){ document.execCommand(c, false, null); document.getElementById('doc').focus(); touch(); }
+  var t;
+  function touch(){
+    var s = document.getElementById('saveText');
+    s.textContent = 'Saving…';
+    clearTimeout(t);
+    t = setTimeout(function(){ s.textContent = 'All changes saved'; }, 900);
+  }
+  function fakeSave(){ var s=document.getElementById('saveText'); s.textContent='All changes saved'; }
+  function count(){
+    var txt = document.getElementById('doc').innerText.trim();
+    var words = txt ? txt.split(/\s+/).length : 0;
+    document.getElementById('wc').textContent = words.toLocaleString();
+    document.getElementById('rt').textContent = Math.max(1, Math.round(words/200)) + ' min';
+  }
+  count();
+</script>
+</body>
+</html>
