@@ -1,5 +1,6 @@
-/* Reading progress: a thin vertical bar on the right edge that fills as you
-   scroll through the article. Auto-injects only on pages with an <article>. */
+/* Reading progress: a thin bar across the top of the page that fills left to
+   right as you scroll through the article. Auto-injects only on pages with an
+   <article>. Works the same on desktop and phone. */
 (function () {
   var art = document.querySelector('article.article');
   if (!art) return;
@@ -18,7 +19,7 @@
     var y = window.scrollY || window.pageYOffset || 0;
     var p = end > start ? (y - start) / (end - start) : 0;
     if (p < 0) p = 0; if (p > 1) p = 1;
-    fill.style.height = (p * 100).toFixed(2) + '%';
+    fill.style.width = (p * 100).toFixed(2) + '%';
   }
 
   update();
